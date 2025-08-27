@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+      let perder_ganhar_empatar = ""
+      let tesoura = "tesoura"
+      let pedra = "pedra"
+      let papel = "papel"
+      let jogada = ""
+      let escolhaDaMaquina = NaN
+      let escolhaDaMaquinaEmTexto = ""
+
+      function quemVence(){
+        if (jogada == "pedra" && escolhaDaMaquinaEmTexto == "pedra") {
+            alert("tu escolheste pedra e a maquina escolheu pedra, empate!")
+        }else if (jogada == "pedra" && escolhaDaMaquinaEmTexto == "papel") {
+            alert("tu escolheste pedra e a maquina escolheu papel, perdeste!")
+        }else if (jogada == "pedra" && escolhaDaMaquinaEmTexto == "tesoura") {
+            alert("tu escolheste pedra e a maquina escolheu tesoura, ganhaste!")
+        }else if (jogada == "tesoura" && escolhaDaMaquinaEmTexto == "pedra") {
+            alert("tu escolheste tesoura e a maquina escolheu pedra perdeste!")
+        }else if (jogada == "tesoura" && escolhaDaMaquinaEmTexto == "papel"){
+            alert("tu escolheste tesoura e a maquina escolheu papel ganhaste!")
+        }else if (jogada == "tesoura" && escolhaDaMaquinaEmTexto == "tesoura"){
+            alert("tu escolheste tesoura e a maquina escolheu tesoura, empate!")
+        }else if (jogada == "papel" && escolhaDaMaquinaEmTexto == "pedra"){
+            alert("tu escolheste papel e a maquina escolheu pedra, ganhaste!")
+        }else if (jogada == "papel" && escolhaDaMaquinaEmTexto == "papel"){
+            alert("tu escolheste papel e a maquina escolheu papel, empate!")
+        }else if (jogada == "papel" && escolhaDaMaquinaEmTexto == "tesoura"){
+            alert("tu escolheste papel e a maquina escolheu tesoura, perdeste!")
+        }
+           
+        
+            
+
+            
+        
+        
+      }
+      function maquina() {
+        escolhaDaMaquina = Math.floor(Math.random() * 3);
+        console.log(escolhaDaMaquina)
+        if (escolhaDaMaquina == 0) {
+           console.log("Máquina escolheu: pedra");
+           escolhaDaMaquinaEmTexto = "pedra"
+           quemVence()
+        } else if (escolhaDaMaquina == 1) {
+           console.log("Máquina escolheu: papel");
+           escolhaDaMaquinaEmTexto = "papel"
+           quemVence()
+        } else {
+           console.log("Máquina escolheu: tesoura");
+           escolhaDaMaquinaEmTexto = "tesoura"
+           quemVence();
+        }
+      }
+    </script>
+    <style>
+        .botao_pedra{
+            height: 100px;
+            width: 100px;
+            border-radius: 80px;   
+            border: 3px solid;
+            background-color: white;
+        }
+        .pedra{
+            border-radius: 80px;
+            height: 64px;
+            width: 64px;
+        }
+    </style>
+</head>
+<body>
+    <button class = "botao_pedra" onclick="jogada = pedra; console.log(pedra); maquina();">
+        <img src = "https://i.pinimg.com/736x/d3/36/b6/d336b685d867234c2edb1510841d67f0.jpg" class="pedra">
+    </button>;
+    <button class = "botao_pedra" onclick="jogada = papel; console.log(papel); maquina();">
+        <img src = "https://tse1.mm.bing.net/th/id/OIP.gjZgbegmGfLqKo6KJSbZ2wHaHU?pid=Api&P=0&h=220" class = "pedra">
+    </button>
+    <button class = "botao_pedra" onclick="jogada = tesoura; console.log(tesoura); maquina();">
+        <img src = "https://up.yimg.com/ib/th/id/OIP.I1KlqKMOiD4aLcuIZ6KyygHaHa?pid=Api&rs=1&c=1&qlt=95&w=109&h=109" class = "pedra">
+    </button>;
+</body>
+</html>
